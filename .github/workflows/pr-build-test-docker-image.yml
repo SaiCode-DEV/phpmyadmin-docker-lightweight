@@ -29,6 +29,9 @@ jobs:
             > [Building test docker images...](https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }})
 
   docker-image-deploy:
+    permissions:
+      contents: read
+      packages: write
     strategy:
       fail-fast: false
       matrix:
