@@ -40,7 +40,7 @@ jobs:
       - name: Build image and push to registry - ${{ inputs.DOCKER_REGISTRY_IMAGE }}
         uses: docker/build-push-action@v6
         with:
-          platforms: linux/amd64
+          platforms: linux/amd64,linux/arm64
           context: .
           file: ${{ inputs.DOCKERFILE_PATH }}
           cache-from: type=registry,ref=${{ inputs.DOCKER_REGISTRY_IMAGE }}
